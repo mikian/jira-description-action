@@ -46,6 +46,9 @@ async function run(): Promise<void> {
 
 function setOutputs(key: string | null, source: ESource | null): void {
   var isFound = key !== null;
+
+  console.log(`JIRA key: ${key} from ${source}`);
+
   core.setOutput('jira-issue-key', key);
   core.setOutput('jira-issue-found', isFound);
   core.setOutput('jira-issue-source', source || 'null');
